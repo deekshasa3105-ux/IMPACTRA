@@ -1,0 +1,372 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+  
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Leaflet map custom controls and polish */
+.leaflet-container {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  z-index: 10 !important;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 1rem !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+  line-height: 1.5;
+}
+
+/* Custom Pulsing Pin Animation */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 12px rgba(239, 68, 68, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+  }
+}
+
+.pin-pulse {
+  animation: pulse-ring 2s infinite cubic-bezier(0.45, 0, 0.55, 1);
+}
+
+/* High contrast mode */
+.high-contrast {
+  filter: contrast(125%);
+}
+
+/* =========================================================================
+   COMPREHENSIVE THEME STYLING & TEXT READABILITY GUARANTEES
+   ========================================================================= */
+
+/* Dark Mode 1: Midnight Navy */
+.theme-midnight,
+[data-theme="midnight"] {
+  background-color: #0b1329 !important;
+  color: #f8fafc !important;
+}
+
+.theme-midnight .bg-teal-50,
+.theme-obsidian .bg-teal-50,
+[data-theme="midnight"] .bg-teal-50,
+[data-theme="obsidian"] .bg-teal-50 {
+  background-color: rgba(13, 148, 136, 0.25) !important;
+  color: #5eead4 !important;
+  border-color: rgba(13, 148, 136, 0.4) !important;
+}
+
+.theme-midnight .bg-amber-50,
+.theme-obsidian .bg-amber-50,
+[data-theme="midnight"] .bg-amber-50,
+[data-theme="obsidian"] .bg-amber-50 {
+  background-color: rgba(217, 119, 6, 0.25) !important;
+  color: #fde68a !important;
+  border-color: rgba(217, 119, 6, 0.4) !important;
+}
+
+.theme-midnight .bg-indigo-50,
+.theme-obsidian .bg-indigo-50,
+[data-theme="midnight"] .bg-indigo-50,
+[data-theme="obsidian"] .bg-indigo-50 {
+  background-color: rgba(99, 102, 241, 0.25) !important;
+  color: #c7d2fe !important;
+  border-color: rgba(99, 102, 241, 0.4) !important;
+}
+
+.theme-midnight h1,
+.theme-midnight h2,
+.theme-midnight h3,
+.theme-midnight h4,
+.theme-midnight h5,
+.theme-midnight h6,
+.theme-midnight .text-slate-900,
+.theme-midnight .text-slate-800,
+[data-theme="midnight"] h1,
+[data-theme="midnight"] h2,
+[data-theme="midnight"] h3,
+[data-theme="midnight"] h4,
+[data-theme="midnight"] .text-slate-900,
+[data-theme="midnight"] .text-slate-800 {
+  color: #ffffff !important;
+}
+
+.theme-midnight .text-slate-700,
+[data-theme="midnight"] .text-slate-700 {
+  color: #e2e8f0 !important;
+}
+
+.theme-midnight .text-slate-600,
+[data-theme="midnight"] .text-slate-600 {
+  color: #cbd5e1 !important;
+}
+
+.theme-midnight .text-slate-500,
+[data-theme="midnight"] .text-slate-500 {
+  color: #94a3b8 !important;
+}
+
+.theme-midnight .bg-white,
+[data-theme="midnight"] .bg-white {
+  background-color: #111c38 !important;
+  color: #f8fafc !important;
+  border-color: #1e293b !important;
+}
+
+.theme-midnight .bg-slate-50,
+[data-theme="midnight"] .bg-slate-50 {
+  background-color: #0f172a !important;
+  color: #f1f5f9 !important;
+  border-color: #1e293b !important;
+}
+
+.theme-midnight .bg-slate-100,
+[data-theme="midnight"] .bg-slate-100 {
+  background-color: #1a274c !important;
+  color: #f1f5f9 !important;
+  border-color: #273663 !important;
+}
+
+.theme-midnight .border-slate-100,
+.theme-midnight .border-slate-200,
+.theme-midnight .border-slate-300,
+[data-theme="midnight"] .border-slate-100,
+[data-theme="midnight"] .border-slate-200,
+[data-theme="midnight"] .border-slate-300 {
+  border-color: #1e293b !important;
+}
+
+.theme-midnight header,
+[data-theme="midnight"] header {
+  background-color: rgba(11, 19, 41, 0.95) !important;
+  border-color: #1e293b !important;
+}
+
+.theme-midnight input,
+.theme-midnight textarea,
+.theme-midnight select,
+[data-theme="midnight"] input,
+[data-theme="midnight"] textarea,
+[data-theme="midnight"] select {
+  background-color: #152244 !important;
+  color: #ffffff !important;
+  border-color: #263868 !important;
+}
+
+.theme-midnight input::placeholder,
+.theme-midnight textarea::placeholder,
+[data-theme="midnight"] input::placeholder,
+[data-theme="midnight"] textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+.theme-midnight table thead,
+[data-theme="midnight"] table thead {
+  background-color: #152244 !important;
+  color: #cbd5e1 !important;
+}
+
+.theme-midnight table tbody tr:hover,
+[data-theme="midnight"] table tbody tr:hover {
+  background-color: rgba(30, 41, 59, 0.5) !important;
+}
+
+.theme-midnight .leaflet-popup-content-wrapper,
+[data-theme="midnight"] .leaflet-popup-content-wrapper {
+  background-color: #111c38 !important;
+  color: #f8fafc !important;
+  border: 1px solid #263868;
+}
+
+.theme-midnight .leaflet-popup-tip,
+[data-theme="midnight"] .leaflet-popup-tip {
+  background-color: #111c38 !important;
+}
+
+/* Dark Mode 2: Obsidian OLED */
+.theme-obsidian,
+[data-theme="obsidian"] {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+.theme-obsidian h1,
+.theme-obsidian h2,
+.theme-obsidian h3,
+.theme-obsidian h4,
+.theme-obsidian h5,
+.theme-obsidian h6,
+.theme-obsidian .text-slate-900,
+.theme-obsidian .text-slate-800,
+[data-theme="obsidian"] h1,
+[data-theme="obsidian"] h2,
+[data-theme="obsidian"] h3,
+[data-theme="obsidian"] h4,
+[data-theme="obsidian"] .text-slate-900,
+[data-theme="obsidian"] .text-slate-800 {
+  color: #ffffff !important;
+}
+
+.theme-obsidian .text-slate-700,
+[data-theme="obsidian"] .text-slate-700 {
+  color: #f4f4f5 !important;
+}
+
+.theme-obsidian .text-slate-600,
+[data-theme="obsidian"] .text-slate-600 {
+  color: #e4e4e7 !important;
+}
+
+.theme-obsidian .text-slate-500,
+[data-theme="obsidian"] .text-slate-500 {
+  color: #a1a1aa !important;
+}
+
+.theme-obsidian .bg-white,
+[data-theme="obsidian"] .bg-white {
+  background-color: #121212 !important;
+  color: #ffffff !important;
+  border-color: #27272a !important;
+}
+
+.theme-obsidian .bg-slate-50,
+[data-theme="obsidian"] .bg-slate-50 {
+  background-color: #09090b !important;
+  color: #f4f4f5 !important;
+  border-color: #27272a !important;
+}
+
+.theme-obsidian .bg-slate-100,
+[data-theme="obsidian"] .bg-slate-100 {
+  background-color: #18181b !important;
+  color: #f4f4f5 !important;
+  border-color: #3f3f46 !important;
+}
+
+.theme-obsidian .border-slate-100,
+.theme-obsidian .border-slate-200,
+.theme-obsidian .border-slate-300,
+[data-theme="obsidian"] .border-slate-100,
+[data-theme="obsidian"] .border-slate-200,
+[data-theme="obsidian"] .border-slate-300 {
+  border-color: #27272a !important;
+}
+
+.theme-obsidian header,
+[data-theme="obsidian"] header {
+  background-color: rgba(0, 0, 0, 0.95) !important;
+  border-color: #27272a !important;
+}
+
+.theme-obsidian input,
+.theme-obsidian textarea,
+.theme-obsidian select,
+[data-theme="obsidian"] input,
+[data-theme="obsidian"] textarea,
+[data-theme="obsidian"] select {
+  background-color: #18181b !important;
+  color: #ffffff !important;
+  border-color: #3f3f46 !important;
+}
+
+.theme-obsidian input::placeholder,
+.theme-obsidian textarea::placeholder,
+[data-theme="obsidian"] input::placeholder,
+[data-theme="obsidian"] textarea::placeholder {
+  color: #a1a1aa !important;
+}
+
+.theme-obsidian table thead,
+[data-theme="obsidian"] table thead {
+  background-color: #18181b !important;
+  color: #e4e4e7 !important;
+}
+
+.theme-obsidian table tbody tr:hover,
+[data-theme="obsidian"] table tbody tr:hover {
+  background-color: rgba(39, 39, 42, 0.5) !important;
+}
+
+.theme-obsidian .leaflet-popup-content-wrapper,
+[data-theme="obsidian"] .leaflet-popup-content-wrapper {
+  background-color: #121212 !important;
+  color: #ffffff !important;
+  border: 1px solid #3f3f46;
+}
+
+.theme-obsidian .leaflet-popup-tip,
+[data-theme="obsidian"] .leaflet-popup-tip {
+  background-color: #121212 !important;
+}
+
+/* Light Tint Themes with Enhanced Contrast Typography */
+.theme-emerald,
+[data-theme="emerald"] {
+  background-color: #f0fdf4 !important;
+}
+.theme-emerald h1,
+.theme-emerald h2,
+.theme-emerald h3,
+[data-theme="emerald"] h1,
+[data-theme="emerald"] h2,
+[data-theme="emerald"] h3 {
+  color: #064e3b;
+}
+
+.theme-sky,
+[data-theme="sky"] {
+  background-color: #f0f9ff !important;
+}
+.theme-sky h1,
+.theme-sky h2,
+.theme-sky h3,
+[data-theme="sky"] h1,
+[data-theme="sky"] h2,
+[data-theme="sky"] h3 {
+  color: #0c4a6e;
+}
+
+.theme-amber,
+[data-theme="amber"] {
+  background-color: #fffbeb !important;
+}
+.theme-amber h1,
+.theme-amber h2,
+.theme-amber h3,
+[data-theme="amber"] h1,
+[data-theme="amber"] h2,
+[data-theme="amber"] h3 {
+  color: #78350f;
+}
+
+.theme-twilight,
+[data-theme="twilight"] {
+  background-color: #faf5ff !important;
+}
+.theme-twilight h1,
+.theme-twilight h2,
+.theme-twilight h3,
+[data-theme="twilight"] h1,
+[data-theme="twilight"] h2,
+[data-theme="twilight"] h3 {
+  color: #581c87;
+}
+
+

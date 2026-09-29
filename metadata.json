@@ -1,0 +1,6 @@
+{
+  "name": "CivicPulse - Crowdsourced Infrastructure Reporting & Municipal Action Hub",
+  "description": "Crowdsourced civic platform to drop pins on an interactive map, report infrastructure defects with automatic category & ward tagging, track resolution timelines in real-time, and manage municipal dispatch.",
+  "requestFramePermissions": ["geolocation", "notifications"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
